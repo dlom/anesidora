@@ -1,0 +1,27 @@
+{
+  "name": "anesidora",
+  "version": "0.0.1",
+  "description": "pandora client",
+  "main": "pandora.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dlom/anesidora.git"
+  },
+  "keywords": [
+    "pandora"
+  ],
+  "author": "Mark Old",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dlom/anesidora/issues"
+  },
+  "homepage": "https://github.com/dlom/anesidora#readme",
+  "dependencies": {
+    "mcrypt": "0.0.15",
+    "request": "^2.64.0"
+  },
+  "engines": { "node" : "~0.12" }
+}
