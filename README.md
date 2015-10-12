@@ -47,7 +47,7 @@ Handy links:
  - [List of methods](http://6xq.net/pandora-apidoc/json/methods/)
  - [List of error codes](http://6xq.net/pandora-apidoc/json/errorcodes/)
 
-###`var pandora = new Anesidora(email, password, [config])`
+### `var pandora = new Anesidora(email, password, [config])`
 
 Create a new Anesidora instance for making requests.
 No authentication is done until `pandora.login` is called.
@@ -56,7 +56,7 @@ No authentication is done until `pandora.login` is called.
 
 (Optional) a custom [partner config](http://6xq.net/pandora-apidoc/json/partners/#partners)
 
-###`pandora.login(callback)`
+### `pandora.login(callback)`
 
 Authenticate with Pandora.
 
@@ -64,7 +64,7 @@ Authenticate with Pandora.
 
 Do ***all*** requests inside this callback.
 
-###`pandora.request(method, [data], callback)`
+### `pandora.request(method, [data], callback)`
 
 Make a Pandora API call.
 
