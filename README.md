@@ -3,6 +3,10 @@ Anesidora
 
 A really simple wrapper on the Pandora JSON API.
 
+Please note that at the moment, this package is limited to `nodejs 0.12.x` due to issues with mcrypt.
+Follow along on [this issue](https://github.com/tugrul/node-mcrypt/issues/31).
+I haven't figured out which versions of `io.js` are compatible with `mcrypt@0.0.15`, but once I do, I'll update the engine requirements.
+
 ## Installation
 
 `npm install --save anesidora`
