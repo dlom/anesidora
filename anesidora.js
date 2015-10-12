@@ -47,7 +47,7 @@ var Anesidora = (function() {
     };
 
     var decryptSyncTime = function(password, ciphered) {
-        return parseInt(encryption.decrypt(password, ciphered, true).toString("utf8", 4, 14), 10);
+        return parseInt(encryption.decrypt(password, ciphered).toString("utf8", 4, 14), 10);
     };
 
     var partnerLogin = function(partnerInfo, callback) {
@@ -80,7 +80,7 @@ var Anesidora = (function() {
                 "password": password,
                 "partnerAuthToken": partnerData.partnerAuthToken,
                 "syncTime": partnerData.syncTimeOffset + seconds()
-            }))
+            })).toString("hex").toLowerCase()
         }, unwrap(callback));
     };
 
@@ -101,7 +101,7 @@ var Anesidora = (function() {
         });
     };
 
-    Anesidora.prototype.raw = function(method, data, callback) {
+    Anesidora.prototype.request = function(method, data, callback) {
         var that = this;
         if (typeof data === "function" && callback == null) {
             callback = data;
@@ -122,7 +122,7 @@ var Anesidora = (function() {
                 "partner_id": that.authData.partnerId,
                 "user_id": that.authData.userId
             },
-            "body": encryption.encrypt(that.partnerInfo.encryptPassword, JSON.stringify(body))
+            "body": encryption.encrypt(that.partnerInfo.encryptPassword, JSON.stringify(body)).toString("hex").toLowerCase()
         }, unwrap(callback));
     };
 
