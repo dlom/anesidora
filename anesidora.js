@@ -9,14 +9,13 @@ var Anesidora = (function() {
                 "username": "android",
                 "password": "AC7IBG09A3DTSYM4R41UJWL07VLN8JI7",
                 "deviceModel": "android-generic",
-                "version": "5",
                 "decryptPassword": "R=U!LH$O2B#",
                 "encryptPassword": "6#26FRL$ZWD"
             };
         }
         this.username = username;
         this.password = password;
-        this.partnerInfo = partnerInfo;
+        this.partnerInfo = _.extend(partnerInfo, {"version": "5"});
         this.authData = null;
     };
 
@@ -109,10 +108,10 @@ var Anesidora = (function() {
         }
         var secure = false;
         if (method === "station.getPlaylist") secure = true;
-        var body = _.defaults({
+        var body = _.extend(data, {
             "userAuthToken": that.authData.userAuthToken,
             "syncTime": that.authData.syncTimeOffset + seconds()
-        }, data);
+        });
         request({
             "method": "post",
             "url": endpoint(secure),
