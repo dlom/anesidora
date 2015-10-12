@@ -38,12 +38,17 @@ See [here](http://6xq.net/pandora-apidoc/json/) for API documentation.
 Authentication, encryption, and TLS are all handled automatically.
 All you need is an email and a password, and you're good to go.
 
-###`var pandora = new Anesidora(email, password, [partnerConfig])`
+Handy links:
+
+ - [List of methods](http://6xq.net/pandora-apidoc/json/methods/)
+ - [List of error codes](http://6xq.net/pandora-apidoc/json/errorcodes/)
+
+###`var pandora = new Anesidora(email, password, [config])`
 
 Create a new Anesidora instance for making requests.
 No authentication is done until `pandora.login` is called.
 
-**partnerConfig**
+**config**
 
 (Optional) a custom [partner config](http://6xq.net/pandora-apidoc/json/partners/#partners)
 
@@ -65,9 +70,9 @@ A Pandora API call [method](http://6xq.net/pandora-apidoc/json/methods/), such a
 
 **data**
 
-Data for the API call, if necessary.
+(Optional) Data for the API call, if necessary.
 
 **callback** - `function(err, result)`
 
-- `result` is the value returned from Pandora.  Refer to the individual method docs for more information.
+ - `result` is the value returned from Pandora.  Refer to the individual method docs for more information.
 
