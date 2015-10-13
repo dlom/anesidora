@@ -19,9 +19,9 @@ var Anesidora = (function() {
         this.authData = null;
     };
 
-    var ENDPOINT = "://tuner.pandora.com/services/json/";
+    Anesidora.ENDPOINT = "://tuner.pandora.com/services/json/";
     var endpoint = function(secure) {
-        return (secure ? "https" : "http") + ENDPOINT;
+        return (secure ? "https" : "http") + Anesidora.ENDPOINT;
     };
 
     var seconds = function() {
@@ -112,6 +112,8 @@ var Anesidora = (function() {
             "userAuthToken": that.authData.userAuthToken,
             "syncTime": that.authData.syncTimeOffset + seconds()
         });
+        var encryptedBody = encryption.encrypt(that.partnerInfo.encryptPassword, JSON.stringify(body)).toString("hex").toLowerCase();
+        if (method === "test.checkLicensing") encryptedBody = null;
         request({
             "method": "post",
             "url": endpoint(secure),
@@ -121,7 +123,7 @@ var Anesidora = (function() {
                 "partner_id": that.authData.partnerId,
                 "user_id": that.authData.userId
             },
-            "body": encryption.encrypt(that.partnerInfo.encryptPassword, JSON.stringify(body)).toString("hex").toLowerCase()
+            "body": encryptedBody
         }, unwrap(callback));
     };
 
