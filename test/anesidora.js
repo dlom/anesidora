@@ -1,6 +1,17 @@
 var test = require("tape");
-var config = require("./config");
 var Anesidora = require("../anesidora");
+
+var config = {
+    "email": process.env.PANDORA_EMAIL,
+    "password": process.env.PANDORA_PASSWORD,
+    "partnerConfig": {
+        "username": "android",
+        "password": "AC7IBG09A3DTSYM4R41UJWL07VLN8JI7",
+        "deviceModel": "android-generic",
+        "decryptPassword": "R=U!LH$O2B#",
+        "encryptPassword": "6#26FRL$ZWD"
+    }
+};
 
 test("Anesidora", function(t) {
     t.plan(2);
