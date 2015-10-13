@@ -1,7 +1,7 @@
 {
   "name": "anesidora",
-  "version": "1.0.2",
-  "description": "pandora client",
+  "version": "1.0.3",
+  "description": "A really simple wrapper around the Pandora JSON API",
   "main": "anesidora.js",
   "scripts": {
     "test": "./node_modules/.bin/tape test/*.js"
