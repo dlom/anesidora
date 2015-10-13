@@ -56,7 +56,7 @@ No authentication is done until `pandora.login` is called.
 
 **config**
 
-(Optional) a custom [partner config](http://6xq.net/pandora-apidoc/json/partners/#partners)
+(Optional) A custom [partner config](http://6xq.net/pandora-apidoc/json/partners/#partners).
 
 ### `pandora.login(callback)`
 
