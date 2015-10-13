@@ -1,6 +1,8 @@
 Anesidora
 =========
 
+[![Build Status](https://travis-ci.org/dlom/anesidora.svg?branch=master)](https://travis-ci.org/dlom/anesidora)
+
 A really simple wrapper on the Pandora JSON API.
 
 Please note that at the moment, this package is limited to `nodejs@0.12.x` due to issues with mcrypt.
