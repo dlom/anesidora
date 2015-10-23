@@ -1,6 +1,6 @@
 {
   "name": "anesidora",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A really simple wrapper around the Pandora JSON API",
   "main": "anesidora.js",
   "scripts": {
