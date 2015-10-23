@@ -106,6 +106,11 @@ var Anesidora = (function() {
             callback = data;
             data = {};
         }
+
+        if (that.authData == null) {
+            return callback(new Error("Not authenticated with Pandora (call login() before request())"));
+        }
+
         var secure = false;
         if (method === "station.getPlaylist") secure = true;
         var body = _.extend(data, {

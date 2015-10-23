@@ -4,7 +4,7 @@
   "description": "A really simple wrapper around the Pandora JSON API",
   "main": "anesidora.js",
   "scripts": {
-    "test": "./node_modules/.bin/tape test/*.js"
+    "test": "./node_modules/.bin/faucet test/*.js"
   },
   "repository": {
     "type": "git",
@@ -28,6 +28,7 @@
     "node": "~0.12"
   },
   "devDependencies": {
+    "faucet": "0.0.1",
     "tape": "^4.2.1"
   }
 }

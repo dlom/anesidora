@@ -36,21 +36,29 @@ test("Anesidora()", function(t) {
 });
 
 test("pandora.login()", function(t) {
-    t.plan(4);
+    t.plan(3);
     var pandora = new Anesidora(config.email, config.password);
     pandora.login(function(err) {
-        t.error(err, "did not error");
+        t.error(err, "did not error (login)");
         t.ok(pandora.authData, "successfully authenticated");
         t.equal(typeof pandora.authData.syncTimeOffset, "number", "decrypted syncTime");
-        t.test("pandora.request()", function(tt) {
-            tt.plan(4);
+    });
+});
+
+test("pandora.request()", function(t) {
+    t.plan(6);
+    var pandora = new Anesidora(config.email, config.password);
+    pandora.request("user.getStationList", function(err, result) {
+        t.assert(err != null && err instanceof Error, "did error when not authenticated");
+        pandora.login(function(err) {
+            t.error(err, "did not error (login)")
             pandora.request("test.checkLicensing", function(err, result) {
-                tt.error(err, "did not error");
-                tt.equal(typeof result.isAllowed, "boolean", "makes a call with non-encrypted body");
+                t.error(err, "did not error (checkLicensing)");
+                t.equal(typeof result.isAllowed, "boolean", "makes a call with non-encrypted body");
             });
             pandora.request("user.getStationList", function(err, result) {
-                tt.error(err, "did not error");
-                tt.ok(Array.isArray(result.stations), "makes a call with encrypted body");
+                t.error(err, "did not error (getStationList)");
+                t.ok(Array.isArray(result.stations), "makes a call with encrypted body");
             });
         });
     });
