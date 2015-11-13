@@ -1,6 +1,6 @@
 {
   "name": "anesidora",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "A really simple wrapper around the Pandora JSON API",
   "main": "anesidora.js",
   "scripts": {
@@ -23,9 +23,6 @@
     "mcrypt": "^0.1.7",
     "request": "^2.64.0",
     "underscore": "^1.8.3"
-  },
-  "engines": {
-    "node": "~0.12"
   },
   "devDependencies": {
     "faucet": "0.0.1",
