@@ -2,6 +2,7 @@ Anesidora
 =========
 
 [![Build Status](https://travis-ci.org/dlom/anesidora.svg?branch=master)](https://travis-ci.org/dlom/anesidora)
+[![npm](https://img.shields.io/npm/v/anesidora.svg)](https://www.npmjs.com/package/anesidora)
 
 A really simple wrapper around the Pandora JSON API.
 
