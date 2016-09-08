@@ -1,12 +1,12 @@
-var crypto = require('crypto');
+var crypto = require("crypto");
 var iv = new Buffer("");
 
 var PADDING_LENGTH = 16;
 var PADDING = Array(PADDING_LENGTH).join("\0");
 
-function createCryptor(key) {
+var createCryptor = function(key) {
     key = new Buffer(key);
-    return function encrypt(data) {
+    return function(data) {
         var cipher = crypto.createCipheriv("bf-ecb", key, iv);
         cipher.setAutoPadding(false);
         var padLength = PADDING_LENGTH - (data.length % PADDING_LENGTH);
@@ -18,12 +18,12 @@ function createCryptor(key) {
         } catch (e) {
             return null;
         }
-    }
-}
+    };
+};
 
-function createDecryptor(key) {
+var createDecryptor = function(key) {
     key = new Buffer(key);
-    return function decrypt(data) {
+    return function(data) {
         var cipher = crypto.createDecipheriv("bf-ecb", key, iv);
         cipher.setAutoPadding(false);
         try {
@@ -34,9 +34,8 @@ function createDecryptor(key) {
         } catch (e) {
             return null;
         }
-    }
-}
-
+    };
+};
 
 exports.decrypt = function(password, ciphered) {
     var blowfish = createDecryptor(password);

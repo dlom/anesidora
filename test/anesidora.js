@@ -51,7 +51,7 @@ test("pandora.request()", function(t) {
     pandora.request("user.getStationList", function(err, result) {
         t.assert(err != null && err instanceof Error, "did error when not authenticated");
         pandora.login(function(err) {
-            t.error(err, "did not error (login)")
+            t.error(err, "did not error (login)");
             pandora.request("test.checkLicensing", function(err, result) {
                 t.error(err, "did not error (checkLicensing)");
                 t.equal(typeof result.isAllowed, "boolean", "makes a call with non-encrypted body");
