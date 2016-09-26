@@ -10,8 +10,8 @@ var createCryptor = function(key) {
         var cipher = crypto.createCipheriv("bf-ecb", key, iv);
         cipher.setAutoPadding(false);
         var padLength = PADDING_LENGTH - (data.length % PADDING_LENGTH);
-        if (padLength == PADDING_LENGTH) {
-          padLength = 0;
+        if (padLength === PADDING_LENGTH) {
+            padLength = 0;
         }
         try {
             return Buffer.concat([
